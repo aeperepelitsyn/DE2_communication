@@ -64,9 +64,10 @@ architecture rtl of de2_communication is
 	signal rxdata, txdata, data, tdata : bytes (0 to 7);
 	signal rindex: natural range 0 to 7 := 0;
 	
-	constant skipping : natural := 1535; -- empiric non parameterized constant
+	constant skipping : natural := 641; -- empiric non parameterized constant
+	                                    -- possible values: 641,642,643,1279
 	
-	 -- Enumerated type for FSM (Finite-State Machine)
+	-- Enumerated type for FSM (Finite-State Machine)
 	type state_type is (idle, delay, receiving, extra, waiting, returning);
 	signal rstate, wstate : state_type;        -- Register to hold FSMs state
 begin
