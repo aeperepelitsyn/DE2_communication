@@ -114,7 +114,7 @@ begin
 					received <= '0';
 					requesting <= '0';
 					if oRxD_Ready = '1' then
-						if oRxD_DATA(7) = '1' then
+						if oRxD_DATA(7) = '1' and rindex = 0 then
 							rstate <= delay;
 							request7bit <= oRxD_DATA(6 downto 0);
 						else
